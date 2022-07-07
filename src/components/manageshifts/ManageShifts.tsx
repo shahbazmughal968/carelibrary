@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "./ManageShifts";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -7,6 +6,7 @@ import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+
 import Box, { BoxProps } from '@mui/material/Box';
 
 const ManageShifts: React.FC = () => {
@@ -53,18 +53,24 @@ const ManageShifts: React.FC = () => {
                 borderRadius: 1,
               }}
             >
-              <FormControl sx={{ width: "25%", height: "25%" }}>
+             
+              <FormControl sx={{ width: "25%", height: "25%",}} >
                 <InputLabel id="demo-simple-select-label">Day</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   label="Age"
                   value={day}
+                 
                   onChange={handleChange}
+                 
                 >
-                  <MenuItem value={10}>Fri,11</MenuItem>
+                  <MenuItem value={10} >Fri,11</MenuItem>
+                  <MenuItem value={10} >Sat,12</MenuItem>
+                  <MenuItem value={10} >Sun,13</MenuItem>
                 </Select>
               </FormControl>
+         
               <Typography variant="h6">{item.name}</Typography>
               <Box sx={{ display: 'flex',
           flexDirection: 'row',
