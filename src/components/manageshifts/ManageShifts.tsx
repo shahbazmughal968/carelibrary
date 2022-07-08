@@ -6,19 +6,19 @@ import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-
-import Box, { BoxProps } from '@mui/material/Box';
+import "./ManageShifts.scss";
+import Box from "@mui/material/Box";
 
 const ManageShifts: React.FC = () => {
-  var alphas: Array<{ name: string; request: string,book:string }> = [
-    { name: "Arlington Manor", request: "Requested",book:"Booked" },
-    { name: "Barking Hall", request: "Requested",book:"Booked" },
-    { name: "Baylham Care", request: "Requested",book:"Booked" },
-    { name: "Bramely Court", request: "Requested",book:"Booked" },
-    { name: "Broome End", request: "Requested",book:"Booked" },
-    { name: "Brook House", request: "Requested",book:"Booked" },
-    { name: "Brook House", request: "Requested",book:"Booked" },
-    { name: "Brook House", request: "Requested",book:"Booked" },
+  var alphas: Array<{ name: string; request: string; book: string }> = [
+    { name: "Arlington Manor", request: "Requested", book: "Booked" },
+    { name: "Barking Hall", request: "Requested", book: "Booked" },
+    { name: "Baylham Care", request: "Requested", book: "Booked" },
+    { name: "Bramely Court", request: "Requested", book: "Booked" },
+    { name: "Broome End", request: "Requested", book: "Booked" },
+    { name: "Brook House", request: "Requested", book: "Booked" },
+    { name: "Brook House", request: "Requested", book: "Booked" },
+    { name: "Brook House", request: "Requested", book: "Booked" },
   ];
 
   const [day, setDay] = React.useState("");
@@ -39,48 +39,49 @@ const ManageShifts: React.FC = () => {
             quae, soluta nemo perferendis? Exercitationem quae fugit cum minima
             eveniet.
           </Typography>
-          {alphas.map((item) => (
-            <Card
-              variant="outlined"
-              sx={{
-                width: 300,
-                height: "100%",
-                p: 2,
-                my: 2,
-                mx: 2,
-                boxShadow: 3,
-                display: "inline-block",
-                borderRadius: 1,
-              }}
-            >
-             
-              <FormControl sx={{ width: "25%", height: "25%",}} >
-                <InputLabel id="demo-simple-select-label">Day</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  label="Age"
-                  value={day}
-                 
-                  onChange={handleChange}
-                 
+          <Box>
+            {alphas.map((item) => (
+              <Card
+                variant="outlined"
+                sx={{
+                  width: 300,
+                  height: "100%",
+                  p: 2,
+                  m: 5,
+                  boxShadow: 3,
+                  display: "inline-block",
+                  borderRadius: 1,
+                }}
+              >
+                <FormControl sx={{ width: "25%" }} className="dayBox">
+                  <InputLabel id="demo-simple-select-label">Day</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="Age"
+                    value={day}
+                    onChange={handleChange}
+                  >
+                    <MenuItem value={10}>Fri,11</MenuItem>
+                    <MenuItem value={10}>Sat,12</MenuItem>
+                    <MenuItem value={10}>Sun,13</MenuItem>
+                  </Select>
+                </FormControl>
+
+                <Typography variant="h6">{item.name}</Typography>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                  }}
                 >
-                  <MenuItem value={10} >Fri,11</MenuItem>
-                  <MenuItem value={10} >Sat,12</MenuItem>
-                  <MenuItem value={10} >Sun,13</MenuItem>
-                </Select>
-              </FormControl>
-         
-              <Typography variant="h6">{item.name}</Typography>
-              <Box sx={{ display: 'flex',
-          flexDirection: 'row',
-          justifyContent:'space-between'}}>
-              <Typography variant="subtitle2" >{item.request}</Typography>
-              <Typography variant="subtitle2" >{item.book}</Typography>
-              </Box>
-              
-            </Card>
-          ))}
+                  <Typography variant="subtitle2">{item.request}</Typography>
+                  <Typography variant="subtitle2">{item.book}</Typography>
+                </Box>
+              </Card>
+            ))}
+          </Box>
         </CardContent>
       </Card>
     </>
