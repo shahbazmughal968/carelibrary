@@ -6,19 +6,76 @@ import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import "./ManageShifts.scss";
+import classes from './ManageShifts.module.scss'
 import Box from "@mui/material/Box";
+import RequestImg from './request.png'
+import BookImg from './book.png'
+
 
 const ManageShifts: React.FC = () => {
-  var alphas: Array<{ name: string; request: string; book: string }> = [
-    { name: "Arlington Manor", request: "Requested", book: "Booked" },
-    { name: "Barking Hall", request: "Requested", book: "Booked" },
-    { name: "Baylham Care", request: "Requested", book: "Booked" },
-    { name: "Bramely Court", request: "Requested", book: "Booked" },
-    { name: "Broome End", request: "Requested", book: "Booked" },
-    { name: "Brook House", request: "Requested", book: "Booked" },
-    { name: "Brook House", request: "Requested", book: "Booked" },
-    { name: "Brook House", request: "Requested", book: "Booked" },
+  var alphas: Array<{
+    name: string;
+    request: string;
+    book: string;
+    requestData: string;
+    bookData: string;
+  }> = [
+    {
+      name: "Arlington Manor",
+      request: "Requested",
+      book: "Booked",
+      requestData: "00",
+      bookData: "00",
+    },
+    {
+      name: "Barking Hall",
+      request: "Requested",
+      book: "Booked",
+      requestData: "00",
+      bookData: "00",
+    },
+    {
+      name: "Baylham Care",
+      request: "Requested",
+      book: "Booked",
+      requestData: "00",
+      bookData: "00",
+    },
+    {
+      name: "Bramely Court",
+      request: "Requested",
+      book: "Booked",
+      requestData: "00",
+      bookData: "00",
+    },
+    {
+      name: "Broome End",
+      request: "Requested",
+      book: "Booked",
+      requestData: "00",
+      bookData: "00",
+    },
+    {
+      name: "Brook House",
+      request: "Requested",
+      book: "Booked",
+      requestData: "00",
+      bookData: "00",
+    },
+    {
+      name: "Brook House",
+      request: "Requested",
+      book: "Booked",
+      requestData: "00",
+      bookData: "00",
+    },
+    {
+      name: "Brook House",
+      request: "Requested",
+      book: "Booked",
+      requestData: "00",
+      bookData: "00",
+    },
   ];
 
   const [day, setDay] = React.useState("");
@@ -53,7 +110,7 @@ const ManageShifts: React.FC = () => {
                   borderRadius: 1,
                 }}
               >
-                <FormControl sx={{ width: "25%" }} className="dayBox">
+                <FormControl sx={{ width: "25%" }} className={classes.dayBox}>
                   <InputLabel id="demo-simple-select-label">Day</InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
@@ -69,15 +126,32 @@ const ManageShifts: React.FC = () => {
                 </FormControl>
 
                 <Typography variant="h6">{item.name}</Typography>
+              
+                
                 <Box
                   sx={{
                     display: "flex",
                     flexDirection: "row",
-                    justifyContent: "space-between",
                   }}
                 >
+                   <img src={RequestImg} className={classes.requestimg}/>
                   <Typography variant="subtitle2">{item.request}</Typography>
+                  <img src={BookImg} className={classes.bookimg}/>
                   <Typography variant="subtitle2">{item.book}</Typography>
+                </Box>
+                
+
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "space-around",
+                  }}
+                >
+                  <Typography variant="h5" className={classes.requestData}>
+                    {item.requestData}
+                  </Typography>
+                  <Typography variant="h5" className={classes.bookData}>{item.bookData}</Typography>
                 </Box>
               </Card>
             ))}

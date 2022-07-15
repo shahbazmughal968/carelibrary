@@ -1,0 +1,46 @@
+.initial-enquiries-main-card{
+    width: 70%;
+    height: 70vh;
+    margin: auto;
+    .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected{
+        color: black !important;
+    }
+    .css-1aquho2-MuiTabs-indicator{
+        background-color: #0E918C !important;
+        
+        
+    }
+    .css-145v6pe-MuiButtonBase-root-MuiTabScrollButton-root.Mui-disabled {
+        display: none;
+    }
+    .css-46bh2p-MuiCardContent-root{
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 1px;
+    }
+    .css-1wc848c-MuiFormHelperText-root{
+        margin-left: 0px;
+        font-size: 16px;
+    }
+   
+    .css-heg063-MuiTabs-flexContainer
+    {
+        border-bottom: 1px solid #89b6b4;
+        
+    }
+    // .css-1x51dt5-MuiInputBase-input-MuiInput-input
+    // {
+    //     border: 1.5px solid #898989 !important;
+    //     border-radius: 4px;
+    // }
+    label{
+        display: block;
+    }
+    input
+    {
+        width: 100%;
+        border: 1.5px solid #898989;
+border-radius: 4px;
+padding: 10px;
+    }
+}
